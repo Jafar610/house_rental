@@ -5,7 +5,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Modern Downtown Apartment',
         description: 'Spacious 2-bedroom apartment in the heart of downtown with stunning city views and modern amenities.',
-        price: '$2,500/month',
+        price: '25,000 Birr /month',
         features: ['2 Bed', '2 Bath', 'City View', 'Parking'],
         broker: {
             name: 'Sarah Johnson',
@@ -19,7 +19,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Luxury Villa with Pool',
         description: 'Beautiful 4-bedroom villa with private pool and garden in exclusive gated community.',
-        price: '$4,200/month',
+        price: '10,000 Birr /month',
         features: ['4 Bed', '3 Bath', 'Pool', 'Garden'],
         broker: {
             name: 'Michael Chen',
@@ -33,7 +33,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Cozy Studio Loft',
         description: 'Charming studio loft perfect for young professionals, fully furnished with modern amenities.',
-        price: '$1,800/month',
+        price: '12,000 Birr /month',
         features: ['Studio', '1 Bath', 'Furnished', 'Trendy'],
         broker: {
             name: 'Emily Davis',
@@ -47,7 +47,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Family Suburban Home',
         description: '3-bedroom house with large backyard, perfect for families with children and pets.',
-        price: '$3,200/month',
+        price: '45,000 Birr /month',
         features: ['3 Bed', '2 Bath', 'Yard', 'Family'],
         broker: {
             name: 'David Wilson',
@@ -61,7 +61,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Penthouse Suite',
         description: 'Luxury penthouse with panoramic city views and premium amenities in prestigious building.',
-        price: '$6,500/month',
+        price: '56,000 Birr /month',
         features: ['3 Bed', '3 Bath', 'Penthouse', 'Views'],
         broker: {
             name: 'Lisa Rodriguez',
@@ -75,7 +75,7 @@ const properties = [
         image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
         title: 'Waterfront Condo',
         description: 'Stunning waterfront condominium with private balcony and marina access.',
-        price: '$3,800/month',
+        price: '10,000 Birr /month',
         features: ['2 Bed', '2 Bath', 'Waterfront', 'Balcony'],
         broker: {
             name: 'James Miller',
