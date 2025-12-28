@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - HomeRental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .property-detail {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        
+        .property-gallery {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .carousel-item {
+            height: 500px;
+        }
+        
+        .gallery-slide {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .property-info-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            height: fit-content;
+        }
+        
+        .property-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .property-price {
+            font-size: 1.8rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .property-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .property-features {
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .feature-item i {
+            color: #667eea;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .broker-section {
+            border-top: 2px solid #eee;
+            padding-top: 25px;
+        }
+        
+        .broker-card {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .broker-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        
+        .broker-info h5 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .broker-info p {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        .contact-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #764ba2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: #5a6268;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 8%;
+            z-index: 15;
+            height: 100%;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(102, 126, 234, 0.8);
+            border-radius: 50%;
+            padding: 25px;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background-color: rgba(102, 126, 234, 1);
+        }
+        
+        .carousel-indicators {
+            bottom: 20px;
+            z-index: 15;
+        }
+        
+        .carousel-indicators button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+        }
+        
+        .carousel-indicators .active {
+            background-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-home me-2"></i>HomeRental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#properties">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Property Detail Section -->
+    <div class="container property-detail">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left me-2"></i>Back to Properties</a>
+        
+        <div class="row">
+            <!-- Property Gallery -->
+            <div class="col-lg-8">
+                <div id="propertyGallery" class="carousel slide property-gallery" data-bs-ride="carousel">
+                    <div class="carousel-indicators" id="galleryIndicators">
+                        <!-- Indicators will be generated by JavaScript -->
+                    </div>
+                    <div class="carousel-inner" id="gallerySlides">
+                        <!-- Slides will be generated by JavaScript -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#propertyGallery" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#propertyGallery" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Property Information -->
+            <div class="col-lg-4">
+                <div class="property-info-card">
+                    <div id="propertyInfo">
+                        <!-- Property info will be loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Extended property data with multiple images
+        const properties = {
+            1: {
+                id: 1,
+                title: 'Modern Downtown Apartment',
+                price: '$2,500/month',
+                description: 'This stunning 2-bedroom apartment offers the perfect blend of modern luxury and urban convenience. Located in the heart of downtown, you\'ll enjoy breathtaking city views from every window. The open-concept living space features high-end finishes, stainless steel appliances, and floor-to-ceiling windows that flood the space with natural light.',
+                images: [
+                    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    '2 Bedrooms, 2 Bathrooms',
+                    '1,200 sq ft',
+                    'City View',
+                    'Modern Kitchen',
+                    'In-unit Laundry',
+                    'Gym & Pool Access',
+                    'Parking Included'
+                ],
+                broker: {
+                    name: 'Sarah Johnson',
+                    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 123-4567',
+                    email: 'sarah.johnson@homerental.com'
+                }
+            },
+            2: {
+                id: 2,
+                title: 'Luxury Villa with Pool',
+                price: '$4,200/month',
+                description: 'Experience luxury living in this magnificent 4-bedroom villa featuring a private pool and beautifully landscaped garden. Located in an exclusive gated community, this property offers privacy, security, and elegance. The spacious interior boasts marble floors, a gourmet kitchen, and a master suite with walk-in closet.',
+                images: [
+                    'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    '4 Bedrooms, 3 Bathrooms',
+                    '3,500 sq ft',
+                    'Private Pool',
+                    'Garden & Patio',
+                    'Gourmet Kitchen',
+                    '2-Car Garage',
+                    'Security System'
+                ],
+                broker: {
+                    name: 'Michael Chen',
+                    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 234-5678',
+                    email: 'michael.chen@homerental.com'
+                }
+            },
+            3: {
+                id: 3,
+                title: 'Cozy Studio Loft',
+                price: '$1,800/month',
+                description: 'Perfect for young professionals, this charming studio loft combines style and functionality in a compact space. Located in a trendy neighborhood, you\'ll be walking distance to cafes, restaurants, and public transportation. The loft features exposed brick walls, high ceilings, and comes fully furnished.',
+                images: [
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    'Studio Layout',
+                    '650 sq ft',
+                    'Exposed Brick',
+                    'High Ceilings',
+                    'Fully Furnished',
+                    'Trendy Location',
+                    'Pet Friendly'
+                ],
+                broker: {
+                    name: 'Emily Davis',
+                    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 345-6789',
+                    email: 'emily.davis@homerental.com'
+                }
+            },
+            4: {
+                id: 4,
+                title: 'Family Suburban Home',
+                price: '$3,200/month',
+                description: 'This beautiful 3-bedroom house is perfect for families seeking comfort and space. Located in a quiet suburban neighborhood with excellent schools nearby. The home features a large backyard, perfect for children to play, and a spacious living area for family gatherings.',
+                images: [
+                    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    '3 Bedrooms, 2 Bathrooms',
+                    '2,100 sq ft',
+                    'Large Backyard',
+                    'Family Neighborhood',
+                    'Near Schools',
+                    'Driveway Parking',
+                    'Updated Kitchen'
+                ],
+                broker: {
+                    name: 'David Wilson',
+                    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 456-7890',
+                    email: 'david.wilson@homerental.com'
+                }
+            },
+            5: {
+                id: 5,
+                title: 'Penthouse Suite',
+                price: '$6,500/month',
+                description: 'Experience the pinnacle of luxury living in this spectacular penthouse suite. Featuring panoramic city views, premium finishes throughout, and access to exclusive building amenities. The open floor plan creates a seamless flow between living spaces, perfect for entertaining.',
+                images: [
+                    'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    '3 Bedrooms, 3 Bathrooms',
+                    '2,800 sq ft',
+                    'Panoramic Views',
+                    'Premium Finishes',
+                    'Private Terrace',
+                    'Concierge Service',
+                    'Valet Parking'
+                ],
+                broker: {
+                    name: 'Lisa Rodriguez',
+                    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 567-8901',
+                    email: 'lisa.rodriguez@homerental.com'
+                }
+            },
+            6: {
+                id: 6,
+                title: 'Waterfront Condo',
+                price: '$3,800/month',
+                description: 'Stunning waterfront condominium with private balcony and marina access. Wake up to breathtaking water views every morning in this beautifully appointed condo. Features include floor-to-ceiling windows, modern kitchen, and access to exclusive waterfront amenities.',
+                images: [
+                    'https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                ],
+                features: [
+                    '2 Bedrooms, 2 Bathrooms',
+                    '1,400 sq ft',
+                    'Waterfront Views',
+                    'Private Balcony',
+                    'Marina Access',
+                    'Modern Kitchen',
+                    'Fitness Center'
+                ],
+                broker: {
+                    name: 'James Miller',
+                    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
+                    phone: '+1 (555) 678-9012',
+                    email: 'james.miller@homerental.com'
+                }
+            }
+        };
+
+        function loadPropertyDetail() {
+            const propertyId = localStorage.getItem('selectedPropertyId') || '1';
+            const property = properties[propertyId];
+            
+            if (!property) {
+                document.getElementById('propertyInfo').innerHTML = '<p>Property not found.</p>';
+                return;
+            }
+
+            // Generate gallery slides
+            const gallerySlides = document.getElementById('gallerySlides');
+            const galleryIndicators = document.getElementById('galleryIndicators');
+            
+            gallerySlides.innerHTML = '';
+            galleryIndicators.innerHTML = '';
+            
+            property.images.forEach((image, index) => {
+                // Create slide
+                const slide = document.createElement('div');
+                slide.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                slide.innerHTML = `<div class="gallery-slide" style="background-image: url('${image}');"></div>`;
+                gallerySlides.appendChild(slide);
+                
+                // Create indicator
+                const indicator = document.createElement('button');
+                indicator.type = 'button';
+                indicator.setAttribute('data-bs-target', '#propertyGallery');
+                indicator.setAttribute('data-bs-slide-to', index);
+                indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+                if (index === 0) {
+                    indicator.className = 'active';
+                    indicator.setAttribute('aria-current', 'true');
+                }
+                galleryIndicators.appendChild(indicator);
+            });
+
+            // Generate property info
+            const propertyInfo = document.getElementById('propertyInfo');
+            propertyInfo.innerHTML = `
+                <div class="property-title">${property.title}</div>
+                <div class="property-price">${property.price}</div>
+                <div class="property-description">${property.description}</div>
+                
+                <div class="property-features">
+                    <h5 class="mb-3"><i class="fas fa-list me-2"></i>Features</h5>
+                    ${property.features.map(feature => `
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>${feature}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="broker-section">
+                    <h5 class="mb-3"><i class="fas fa-user-tie me-2"></i>Your Broker</h5>
+                    <div class="broker-card">
+                        <img src="${property.broker.avatar}" alt="${property.broker.name}" class="broker-avatar">
+                        <div class="broker-info">
+                            <h5>${property.broker.name}</h5>
+                            <p><i class="fas fa-phone me-2"></i>${property.broker.phone}</p>
+                            <p><i class="fas fa-envelope me-2"></i>${property.broker.email}</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="tel:${property.broker.phone}" class="contact-btn me-2">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                        <a href="mailto:${property.broker.email}" class="contact-btn">
+                            <i class="fas fa-envelope me-2"></i>Email
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load property detail when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPropertyDetail();
+            
+            // Initialize carousel after content is loaded
+            setTimeout(() => {
+                const carousel = document.querySelector('#propertyGallery');
+                if (carousel) {
+                    // Ensure Bootstrap carousel is properly initialized
+                    const bsCarousel = new bootstrap.Carousel(carousel, {
+                        interval: 5000,
+                        wrap: true,
+                        keyboard: true,
+                        pause: 'hover'
+                    });
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
